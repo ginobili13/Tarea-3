@@ -5,10 +5,12 @@ import java.util.ArrayList;
 public class receta {
 
 	String nombre;
-	ArrayList<String> ingredientes = new ArrayList<String>();
+	ArrayList<Ingredientes> ingredientes = new ArrayList<Ingredientes>();
 	ArrayList<String> preparacion = new ArrayList<String>();
-							
-	public receta(String nombre, ArrayList<String> ingredientes, ArrayList<String> preparacion) {
+	String autor;
+	int personas = 4;
+	
+	public receta(String nombre, ArrayList<Ingredientes> ingredientes, ArrayList<String> preparacion) {
 
 		super();
 		this.nombre = nombre;
@@ -29,11 +31,11 @@ public class receta {
 		this.nombre = nombre;
 	}
 
-	public ArrayList<String> getIngredientes() {
+	public ArrayList<Ingredientes> getIngredientes() {
 		return ingredientes;
 	}
 
-	public void setIngredientes(ArrayList<String> ingredientes) {
+	public void setIngredientes(ArrayList<Ingredientes> ingredientes) {
 		this.ingredientes = ingredientes;
 	}
 
@@ -44,5 +46,34 @@ public class receta {
 	public void setPreparacion(ArrayList<String> preparacion) {
 		this.preparacion = preparacion;
 	}
+
+	public String getAutor() {
+		return autor;
+	}
+
+	public void setAutor(String autor) {
+		this.autor = autor;
+	}
+
+	public int getPersonas() {
+		return personas;
+	}
+
+	public void setPersonas(int personas) {
+		this.personas = personas;
+	}
 	
+	public receta recetaPara(int personas) {
+		receta nueva = new receta(this.getNombre());
+		nueva.setAutor(this.getAutor());
+		nueva.setPersonas(personas);
+		nueva.setPreparacion(this.getPreparacion());
+		ArrayList<Ingredientes> ing = this.getIngredientes();
+		double factor = personas/this.getPersonas();
+		for(Ingredientes i:ing) {
+			i.setCantidad((float) (i.getCantidad()*factor));
+		}
+		nueva.setIngredientes(ing);
+		return nueva;
+	}
 }
