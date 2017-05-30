@@ -1,12 +1,14 @@
 package tarea1GitGui;
 
+import java.util.ArrayList;
+
 public class receta {
 
 	String nombre;
-	String ingredientes;
-	String preparacion;
+	ArrayList<String> ingredientes = new ArrayList<String>();
+	ArrayList<String> preparacion = new ArrayList<String>();
 			
-	public receta(String nombre, String ingredientes, String preparacion) {
+	public receta(String nombre, ArrayList<String> ingredientes, ArrayList<String> preparacion) {
 		super();
 		this.nombre = nombre;
 		this.ingredientes = ingredientes;
@@ -26,19 +28,19 @@ public class receta {
 		this.nombre = nombre;
 	}
 
-	public String getIngredientes() {
+	public ArrayList<String> getIngredientes() {
 		return ingredientes;
 	}
 
-	public void setIngredientes(String ingredientes) {
+	public void setIngredientes(ArrayList<String> ingredientes) {
 		this.ingredientes = ingredientes;
 	}
 
-	public String getPreparacion() {
+	public ArrayList<String> getPreparacion() {
 		return preparacion;
 	}
 
-	public void setPreparacion(String preparacion) {
+	public void setPreparacion(ArrayList<String> preparacion) {
 		this.preparacion = preparacion;
 	}
 	
