@@ -7,8 +7,9 @@ public class receta {
 	String nombre;
 	ArrayList<String> ingredientes = new ArrayList<String>();
 	ArrayList<String> preparacion = new ArrayList<String>();
-			
+							
 	public receta(String nombre, ArrayList<String> ingredientes, ArrayList<String> preparacion) {
+
 		super();
 		this.nombre = nombre;
 		this.ingredientes = ingredientes;
