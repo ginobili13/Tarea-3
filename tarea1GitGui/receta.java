@@ -1,12 +1,14 @@
 package tarea1GitGui;
 
+import java.util.ArrayList;
+
 public class receta {
 
 	String nombre;
-	String ingredientes;
+	ArrayList<String> ingredientes = new ArrayList<String>();
 	String preparacion;
 			
-	public receta(String nombre, String ingredientes, String preparacion) {
+	public receta(String nombre, ArrayList<String> ingredientes, String preparacion) {
 		super();
 		this.nombre = nombre;
 		this.ingredientes = ingredientes;
@@ -26,11 +28,11 @@ public class receta {
 		this.nombre = nombre;
 	}
 
-	public String getIngredientes() {
+	public ArrayList<String> getIngredientes() {
 		return ingredientes;
 	}
 
-	public void setIngredientes(String ingredientes) {
+	public void setIngredientes(ArrayList<String> ingredientes) {
 		this.ingredientes = ingredientes;
 	}
 
